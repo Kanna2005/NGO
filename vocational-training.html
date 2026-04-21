@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Vocational Training & Livelihood | Bharat Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .program-hero { background: linear-gradient(125deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%); padding: 4rem 0 5rem; position: relative; overflow: hidden; }
+    .program-stats { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0; }
+    .program-stat-card { background: var(--card-bg); border-radius: 1.5rem; padding: 1.5rem; text-align: center; min-width: 180px; border: 1px solid var(--card-border); }
+    .program-stat-number { font-size: 2.5rem; font-weight: 900; color: #FF9933; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .feature-card { background: var(--card-bg); border-radius: 1.5rem; padding: 1.8rem; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); border-color: #FF9933; }
+    .feature-icon { font-size: 2.5rem; color: #FF9933; margin-bottom: 1rem; }
+    .image-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .program-img-card { background: var(--card-bg); border-radius: 1.2rem; overflow: hidden; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .program-img-card:hover { transform: scale(1.02); }
+    .img-placeholder { width: 100%; height: 200px; background: linear-gradient(135deg, #FF9933, #138808); display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; }
+    .img-caption { padding: 1rem; text-align: center; font-weight: 500; }
+    .course-list { list-style: none; padding: 0; }
+    .course-list li { padding: 0.8rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 1rem; }
+    .course-list li i { color: #FF9933; width: 28px; }
+    .placement-stats { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0; }
+    .placement-item { text-align: center; background: var(--card-bg); padding: 1rem 1.5rem; border-radius: 1rem; }
+    .animate-on-scroll { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo"><h1>BHARAT FOUNDATION</h1><p>सेवा परमो धर्मः | Transforming India</p></div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">About Us</a><div class="dropdown-menu"><a href="story.html">Our Story</a><a href="vision.html">Mission & Vision</a></div></li>
+        <li class="nav-item mega"><a href="index.html">Programs</a><div class="mega-menu"><div class="mega-col"><h4>📚 Education</h4><a href="elementary-years.html">Elementary Years</a><a href="inclusive-education.html">Inclusive Education</a></div><div class="mega-col"><h4>🎓 Skilling</h4><a href="vocational-training.html">Vocational Training</a></div></div></li>
+        <li class="nav-item"><a href="index.html">Get Involved</a><div class="dropdown-menu"><a href="volunteer.html">Volunteer</a><a href="donor.html">Donor</a></div></li>
+        <li class="nav-item"><a href="index.html">Resources</a><div class="dropdown-menu"><a href="research.html">Research</a><a href="press-kit.html">Media & Press Kit</a></div></li>
+        <li class="nav-item"><a href="index.html">Contact</a><div class="dropdown-menu"><a href="helpline.html">Helpline</a><a href="feedback.html">Feedback</a></div></li>
+        <li><a href="donate.html" class="donate-btn-nav"><i class="fas fa-heart"></i> Donate</a></li>
+      </ul>
+      <div class="theme-toggle-wrapper"><button id="darkModeToggle" class="theme-switch"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button></div>
+      <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="close-drawer" id="closeDrawerBtn">&times;</div>
+  <div class="mobile-nav-item"><a href="index.html">🏠 Home</a></div>
+  <div class="mobile-nav-item"><a href="index.html">📖 About Us</a><div class="mobile-sub"><a href="story.html">Our Story</a><a href="vision.html">Mission</a></div></div>
+  <div class="mobile-nav-item"><a href="index.html">📚 Programs</a><div class="mobile-sub"><a href="early-years.html">Early Years</a><a href="elementary-years.html">Elementary Years</a><a href="inclusive-education.html">ENABLE</a><a href="vocational-training.html">Vocational</a></div></div>
+  <div class="mobile-nav-item"><a href="index.html">🤝 Get Involved</a></div>
+  <div class="mobile-nav-item"><a href="index.html">📄 Resources</a></div>
+  <div class="mobile-nav-item"><a href="index.html">📞 Contact</a></div>
+  <a href="donate.html" class="mobile-donate-btn">❤️ Donate Now</a>
+</div>
+
+<main>
+  <section class="program-hero">
+    <div class="hero-bg-shape"></div>
+    <div class="container">
+      <div class="hero-text" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="hero-badge">💼 Skills for Life | Livelihood for All</div>
+        <h2 style="font-size: clamp(2rem, 5vw, 3rem);">Vocational Training & <span class="gradient-text">Livelihood Program</span></h2>
+        <div class="tagline" style="border-left: none; border-top: 3px solid #FF9933; padding-top: 1rem; display: inline-block;">Empowering India's youth with market-relevant skills, job placement, and entrepreneurship support — transforming lives through dignified livelihoods.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="program-stats">
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">2,50,000+</div><p>Youth Trained</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">72%</div><p>Job Placement Rate</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">25+</div><p>Skill Trades Offered</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">1,200+</div><p>Employer Partners</p></div>
+    </div>
+
+    <div class="image-showcase">
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-laptop-code"></i></div><div class="img-caption">IT & Digital skills training</div></div>
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-cut"></i></div><div class="img-caption">Tailoring & garment manufacturing</div></div>
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-tools"></i></div><div class="img-caption">Electrical & plumbing trades</div></div>
+    </div>
+
+    <div class="section-header"><span class="section-subtitle">Skill Tracks</span><h2 class="section-title">Our Vocational Programs</h2></div>
+    <div class="feature-grid">
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-laptop"></i></div><h3>IT & Digital Skills</h3><p>Web development, data entry, digital marketing, and IT support. 3-6 month certification with internship opportunities.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-cut"></i></div><h3>Garment Making & Textiles</h3><p>Industrial sewing, embroidery, quality control, and boutique management. Partnered with leading textile brands.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>Electrical & Electronics</h3><p>Basic electrical wiring, appliance repair, solar panel installation, and home automation systems.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-car"></i></div><h3>Automotive Repair</h3><p>Two-wheeler and four-wheeler servicing, diagnostic skills, and spare parts management.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-utensils"></i></div><h3>Hospitality & Food Services</h3><p>Food preparation, restaurant service, housekeeping, and customer relations.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-seedling"></i></div><h3>Agriculture & Allied</h3><p>Modern farming techniques, organic cultivation, poultry, and dairy management.</p></div>
+    </div>
+
+    <div class="highlight-card glass-effect animate-on-scroll" style="margin: 2rem 0;">
+      <h3 style="color: #FF9933;">🎯 Our Training Model</h3>
+      <p>We follow a <strong>70% practical + 30% theory</strong> approach with real-world simulations. Each trainee receives a toolkit, safety equipment, and 6 months of post-placement support. Our <strong>placement cell</strong> works with 1,200+ corporate partners to ensure sustainable employment with minimum wage guarantee.</p>
+    </div>
+
+    <div class="section-header"><span class="section-subtitle">Courses & Duration</span><h2 class="section-title">Program Structure</h2></div>
+    <ul class="course-list" style="margin-bottom: 2rem;">
+      <li><i class="fas fa-clock"></i> Foundation Course: 3 months (Basic skills & soft skills)</li>
+      <li><i class="fas fa-certificate"></i> Advanced Diploma: 6 months (Specialization in chosen trade)</li>
+      <li><i class="fas fa-briefcase"></i> On-Job Training: 2 months internship with stipend</li>
+      <li><i class="fas fa-chart-line"></i> Entrepreneurship Track: Business planning & micro-loan support</li>
+    </ul>
+
+    <div class="placement-stats">
+      <div class="placement-item"><strong style="color:#FF9933;">₹12,000 - 18,000</strong><br>Average Starting Salary</div>
+      <div class="placement-item"><strong style="color:#FF9933;">200+</strong><br>Women Entrepreneurs Supported</div>
+      <div class="placement-item"><strong style="color:#FF9933;">85%</strong><br>Retention Rate After 1 Year</div>
+    </div>
+
+    <div class="mission-vision-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem; margin-bottom: 3rem;">
+      <div class="mv-card animate-on-scroll"><div class="mv-icon"><i class="fas fa-handshake"></i></div><h3>Corporate Partnerships</h3><p>We work with leading companies like Tata, Reliance, Amazon, and Flipkart for skill-aligned job placements and apprenticeship programs.</p></div>
+      <div class="mv-card animate-on-scroll"><div class="mv-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Master Trainers</h3><p>Our trainers are industry-certified professionals with 5+ years of field experience, ensuring high-quality practical training.</p></div>
+    </div>
+
+    <div class="highlight-card glass-effect" style="text-align: center; margin-bottom: 3rem;">
+      <h3>Empower a Youth with Skills</h3>
+      <p style="margin: 1rem 0;">Sponsor a young person's vocational training and help them achieve financial independence.</p>
+      <a href="donate.html" class="btn-primary"><i class="fas fa-heart"></i> Sponsor a Trainee</a>
+    </div>
+  </div>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><p>© 2025 Bharat Foundation — Empowering India</p></div><div><p>📧 connect@bharatfoundation.org</p></div><div class="social-icons"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div></div></footer>
+
+<script>
+  (function() {
+    const mobileBtn = document.getElementById('mobileMenuBtn'), drawer = document.getElementById('mobileDrawer'), overlayDiv = document.getElementById('overlay'), closeBtn = document.getElementById('closeDrawerBtn');
+    function closeDrawer() { if(overlayDiv) overlayDiv.style.display = 'none'; if(drawer) drawer.style.left = '-100%'; document.body.style.overflow = ''; }
+    function openDrawer() { if(drawer) drawer.style.left = '0'; if(overlayDiv) overlayDiv.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    if(mobileBtn) mobileBtn.addEventListener('click', openDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if(overlayDiv) overlayDiv.addEventListener('click', closeDrawer);
+    document.querySelectorAll('.mobile-drawer a').forEach(link => link.addEventListener('click', () => setTimeout(closeDrawer, 100)));
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const setTheme = (isDark) => { if(isDark) { document.body.classList.add('dark-theme'); localStorage.setItem('bharat-theme', 'dark'); } else { document.body.classList.remove('dark-theme'); localStorage.setItem('bharat-theme', 'light'); } };
+    const saved = localStorage.getItem('bharat-theme'), prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(saved === 'dark') setTheme(true); else if(saved === 'light') setTheme(false); else if(prefersDark) setTheme(true); else setTheme(false);
+    if(toggleBtn) toggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-theme')));
+    const animated = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity = '1'; observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    animated.forEach(el => observer.observe(el));
+  })();
+</script>
+</body>
+</html>
