@@ -3,454 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Bharat Foundation | Empowering India - Programs & Categories</title>
+  <title>Bharat Foundation | Empowering India — Programs & Impact</title>
   <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #1e2a2f;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Header & Navigation - Mega Menu Style */
-    header {
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      border-bottom: 1px solid #eef2f0;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      flex-wrap: wrap;
-    }
-    .logo h1 {
-      font-size: 1.7rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #FF9933, #138808);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
-    }
-    .logo p {
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: #FF9933;
-      letter-spacing: 1px;
-      margin-top: 2px;
-    }
-    /* Main Navigation with Dropdown */
-    .nav-links {
-      display: flex;
-      gap: 0.8rem;
-      list-style: none;
-      align-items: center;
-    }
-    .nav-item {
-      position: relative;
-    }
-    .nav-item > a {
-      text-decoration: none;
-      font-weight: 700;
-      color: #2c5e3f;
-      transition: 0.2s;
-      font-size: 0.95rem;
-      padding: 0.5rem 0.8rem;
-      display: inline-block;
-      border-radius: 8px;
-    }
-    .nav-item > a:hover {
-      color: #FF9933;
-      background: #fff5eb;
-    }
-    /* Dropdown Mega Menu Styles */
-    .dropdown-menu {
-      position: absolute;
-      top: 45px;
-      left: 0;
-      background: white;
-      min-width: 260px;
-      border-radius: 16px;
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.25s ease;
-      z-index: 100;
-      border: 1px solid #f0e6dc;
-      padding: 0.8rem 0;
-    }
-    .nav-item:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .dropdown-menu a {
-      display: block;
-      padding: 0.7rem 1.5rem;
-      text-decoration: none;
-      color: #2c5e3f;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: 0.2s;
-      border-left: 3px solid transparent;
-    }
-    .dropdown-menu a:hover {
-      background: #fff8f0;
-      color: #FF9933;
-      border-left-color: #FF9933;
-      padding-left: 1.8rem;
-    }
-    /* Mega menu for Programs (wide) - Responsive */
-    .mega-menu {
-      position: absolute;
-      top: 45px;
-      left: -80px;
-      width: 680px;
-      max-width: 90vw;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.12);
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.25s;
-      padding: 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      border: 1px solid #f0e6dc;
-      z-index: 1000;
-    }
-    .nav-item.mega:hover .mega-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-    .mega-col h4 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #FF9933;
-      margin-bottom: 0.8rem;
-      border-bottom: 1px solid #ffe0b5;
-      display: inline-block;
-    }
-    .mega-col a {
-      display: block;
-      padding: 0.5rem 0;
-      font-size: 0.9rem;
-      color: #2c5e3f;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .mega-col a:hover {
-      color: #FF9933;
-      transform: translateX(4px);
-    }
-    .donate-btn-nav {
-      background: #FF9933;
-      color: white !important;
-      padding: 0.5rem 1.4rem;
-      border-radius: 40px;
-      margin-left: 0.5rem;
-    }
-    .mobile-menu-btn {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #FF9933;
-    }
-
-    /* Hero Section - Responsive */
-    .hero {
-      background: linear-gradient(120deg, #ffffff 0%, #fffaf5 100%);
-      padding: 4rem 0 5rem;
-      border-bottom: 1px solid #f0f4f0;
-    }
-    .hero-grid {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      flex: 1.2;
-    }
-    .hero-text h2 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 900;
-      color: #1e4620;
-      line-height: 1.2;
-    }
-    .hero-text .tagline {
-      font-size: clamp(0.95rem, 3vw, 1.1rem);
-      color: #2c5e3f;
-      margin: 1rem 0;
-      border-left: 4px solid #FF9933;
-      padding-left: 1rem;
-    }
-    .btn-primary {
-      background: #FF9933;
-      border: none;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      color: white;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-size: clamp(0.85rem, 3vw, 1rem);
-    }
-    .hero-image {
-      flex: 0.9;
-      text-align: center;
-    }
-    .hero-image i {
-      font-size: clamp(5rem, 10vw, 8rem);
-      color: #FF9933;
-    }
-    /* Categories showcase on homepage */
-    .section-title {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 800;
-      color: #1e4620;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      width: 60px;
-      height: 3px;
-      background: #FF9933;
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-    }
-    .category-grid-demo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-    .demo-cat-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 1.2rem;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
-      border: 1px solid #eef2e0;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      color: inherit;
-    }
-    .demo-cat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      border-color: #FF9933;
-    }
-    .demo-cat-card i {
-      font-size: 2rem;
-      color: #FF9933;
-    }
-    .demo-cat-card h3 {
-      margin: 0.8rem 0;
-      color: #1e4620;
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-    }
-    .demo-cat-card p {
-      color: #4a6b55;
-      line-height: 1.5;
-    }
-    footer {
-      background: #0a3b1a;
-      color: #e0f0e0;
-      padding: 2.5rem 0;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    /* Responsive Breakpoints */
-    @media (max-width: 1024px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-      .nav-links {
-        gap: 0.4rem;
-      }
-      .nav-item > a {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.85rem;
-      }
-      .mega-menu {
-        left: -120px;
-        width: 600px;
-      }
-    }
-    @media (max-width: 900px) {
-      .nav-links { 
-        display: none; 
-      }
-      .mobile-menu-btn { 
-        display: block; 
-      }
-      .mega-menu { 
-        width: 90vw; 
-        left: -120px;
-        grid-template-columns: 1fr;
-      }
-      .hero-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-text .tagline {
-        border-left: none;
-        border-top: 3px solid #FF9933;
-        padding-top: 0.8rem;
-        display: inline-block;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
-    }
-    @media (max-width: 640px) {
-      .container {
-        padding: 0 1rem;
-      }
-      .hero {
-        padding: 2.5rem 0 3rem;
-      }
-      .category-grid-demo {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .stats-grid {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .impact-stats {
-        flex-direction: column;
-      }
-    }
-    /* mobile drawer - responsive */
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 85%;
-      max-width: 320px;
-      height: 100%;
-      background: white;
-      z-index: 2000;
-      box-shadow: 2px 0 20px rgba(0,0,0,0.1);
-      transition: left 0.3s ease;
-      padding: 2rem 1.5rem;
-      overflow-y: auto;
-    }
-    .mobile-drawer .close-drawer {
-      text-align: right;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #FF9933;
-    }
-    .mobile-drawer .mobile-nav-item {
-      margin: 1.2rem 0;
-      border-bottom: 1px solid #eee;
-    }
-    .mobile-drawer .mobile-sub {
-      padding-left: 1rem;
-      margin-top: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .mobile-drawer a {
-      text-decoration: none;
-      color: #2c5e3f;
-      font-weight: 500;
-      display: block;
-      padding: 0.3rem 0;
-    }
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
-      z-index: 1999;
-      display: none;
-    }
-    /* Stats section responsive */
-    .stats-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-      text-align: center;
-    }
-    .stats-flex > div {
-      flex: 1;
-      min-width: 120px;
-    }
-    @media (max-width: 640px) {
-      .stats-flex {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-    }
-    .impact-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .impact-item {
-      flex: 1;
-      min-width: 140px;
-      background: rgba(255,255,255,0.9);
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-    .btn-primary, .btn-outline {
-      cursor: pointer;
-    }
-    .nav-info {
-      background: #eef2e8;
-      padding: 0.5rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #138808;
-    }
+    /* critical inline fallbacks for smooth loading */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { opacity: 1; transition: opacity 0.2s; }
+    .preload-transition { transition: none !important; }
   </style>
 </head>
 <body>
-
-<div class="nav-info">
-  🌐 Bharat Foundation Multi-Page Website — Click any link to navigate to dedicated pages
-</div>
 
 <header>
   <div class="container">
@@ -460,65 +25,44 @@
         <p>सेवा परमो धर्मः | Transforming India</p>
       </div>
       <ul class="nav-links">
-        <!-- ABOUT US with dropdown - ALL LINKS NAVIGATE TO ACTUAL PAGES -->
         <li class="nav-item">
-          <a href="about.html">About Us</a>
+          <a href="index.html">About Us</a>
           <div class="dropdown-menu">
             <a href="story.html">Our Story & History</a>
             <a href="vision.html">Mission & Vision</a>
-            <a href="leadership.html">Leadership Team</a>
-            <a href="financials.html">Financial Transparency</a>
-            <a href="reports.html">Annual Reports</a>
-            <a href="award.html">Awards & Recognition</a>
           </div>
         </li>
-        <!-- PROGRAMS - MEGA MENU with actual page navigation -->
         <li class="nav-item mega">
-          <a href="programs.html">Programs</a>
+          <a href="index.html">Programs</a>
           <div class="mega-menu">
             <div class="mega-col">
               <h4>📚 Education Vertical</h4>
-              <a href="early-years.html">Early Years (3-8 yrs)</a>
               <a href="elementary-years.html">Elementary Years (8-14 yrs)</a>
-              <a href="hamara-gaon.html">Hamara Gaon (Community Learning)</a>
               <a href="inclusive-education.html">Inclusive Education (ENABLE)</a>
             </div>
             <div class="mega-col">
               <h4>🎓 Youth & Skilling</h4>
-              <a href="second-chance.html">Pratham-Jameel Second Chance Program</a>
               <a href="vocational-training.html">Vocational Training & Livelihood</a>
-              <a href="digital-initiatives.html">Digital Initiatives & EdTech</a>
-              <a href="impact-reports.html">Reports & Impact Studies</a>
             </div>
           </div>
         </li>
-        <!-- GET INVOLVED dropdown with actual pages -->
         <li class="nav-item">
-          <a href="get-involved.html">Get Involved</a>
+          <a href="index.html">Get Involved</a>
           <div class="dropdown-menu">
             <a href="volunteer.html">Volunteer With Us</a>
             <a href="donor.html">Become a Donor</a>
-            <a href="corporate-partnerships.html">Corporate Partnerships</a>
-            <a href="internships.html">Internships & Fellowships</a>
-            <a href="champion.html">Champion for Children</a>
           </div>
         </li>
-        <!-- RESOURCES with actual pages -->
         <li class="nav-item">
-          <a href="resources.html">Resources</a>
+          <a href="index.html">Resources</a>
           <div class="dropdown-menu">
-            <a href="research.html">Research & Policy Briefs</a>
-            <a href="education-report.html">Annual Education Report</a>
-            <a href="toolkits.html">Toolkits for Educators</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="press-kit.html">Media & Press Kit</a>
           </div>
         </li>
-        <!-- CONTACT with actual pages -->
         <li class="nav-item">
-          <a href="contact.html">Contact</a>
+          <a href="index.html">Contact</a>
           <div class="dropdown-menu">
-            <a href="offices.html">Reach Our Offices</a>
             <a href="helpline.html">Partner Helpline</a>
             <a href="media-queries.html">Media Queries</a>
             <a href="feedback.html">Feedback & Grievance</a>
@@ -526,6 +70,12 @@
         </li>
         <li><a href="donate.html" class="donate-btn-nav"><i class="fas fa-heart"></i> Donate</a></li>
       </ul>
+      <div class="theme-toggle-wrapper">
+        <button id="darkModeToggle" class="theme-switch" aria-label="Day/Night mode">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
       <div class="mobile-menu-btn" id="mobileMenuBtn">
         <i class="fas fa-bars"></i>
       </div>
@@ -533,7 +83,6 @@
   </div>
 </header>
 
-<!-- Mobile Drawer with categories - ALL LINKS NAVIGATE TO ACTUAL PAGES -->
 <div class="overlay" id="overlay"></div>
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="close-drawer" id="closeDrawerBtn">&times;</div>
@@ -543,123 +92,125 @@
     <div class="mobile-sub">
       <a href="story.html">Our Story</a>
       <a href="vision.html">Mission & Vision</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="reports.html">Reports</a>
-      <a href="award.html">Awards</a>
     </div>
   </div>
   <div class="mobile-nav-item">
-    <a href="programs.html">📚 Programs</a>
+    <a href="index.html">📚 Programs</a>
     <div class="mobile-sub">
-      <a href="early-years.html">Early Years</a>
       <a href="elementary-years.html">Elementary Years</a>
-      <a href="hamara-gaon.html">Hamara Gaon</a>
-      <a href="inclusive-education.html">Inclusive Education (ENABLE)</a>
-      <a href="second-chance.html">Second Chance Program</a>
-      <a href="vocational-training.html">Vocational Training</a>
-      <a href="digital-initiatives.html">Digital Initiatives</a>
+      <a href="inclusive-education.html">ENABLE</a>
+      <a href="vocational-training.html">Vocational</a>
     </div>
   </div>
   <div class="mobile-nav-item">
-    <a href="get-involved.html">🤝 Get Involved</a>
+    <a href="index.html">🤝 Get Involved</a>
     <div class="mobile-sub">
       <a href="volunteer.html">Volunteer</a>
       <a href="donor.html">Donate</a>
-      <a href="corporate-partnerships.html">Corporate</a>
-      <a href="internships.html">Internships</a>
     </div>
   </div>
   <div class="mobile-nav-item">
-    <a href="resources.html">📄 Resources</a>
+    <a href="index.html">📄 Resources</a>
     <div class="mobile-sub">
-      <a href="research.html">Research</a>
-      <a href="education-report.html">Reports</a>
       <a href="toolkits.html">Toolkits</a>
       <a href="press-kit.html">Media</a>
     </div>
   </div>
   <div class="mobile-nav-item">
-    <a href="contact.html">📞 Contact</a>
+    <a href="index.html">📞 Contact</a>
     <div class="mobile-sub">
-      <a href="offices.html">Offices</a>
       <a href="helpline.html">Helpline</a>
       <a href="feedback.html">Feedback</a>
     </div>
   </div>
-  <a href="donate.html" style="background:#FF9933; color:white; text-align:center; border-radius:40px; padding:12px; margin-top:20px; display:block;">❤️ Donate Now</a>
+  <a href="donate.html" class="mobile-donate-btn">❤️ Donate Now</a>
 </div>
 
 <main>
-  <!-- Hero Section -->
+  <!-- Hero Section with floating elements and parallax style animation -->
   <section class="hero">
+    <div class="hero-bg-shape"></div>
     <div class="container hero-grid">
-      <div class="hero-text">
-        <h2>Empowering Communities,<br>Building a Better Bharat</h2>
+      <div class="hero-text" data-aos="fade-up">
+        <div class="hero-badge">🇮🇳 Empowering Bharat since 1995</div>
+        <h2>Empowering Communities,<br>Building a <span class="gradient-text">Better Bharat</span></h2>
         <div class="tagline">Bharat Foundation — serving 7M+ children & youth through innovative programs in education, skilling & inclusion.</div>
-        <a href="programs.html" class="btn-primary" id="exploreProgramsBtn"><i class="fas fa-layer-group"></i> Explore Our Programs</a>
+        <a href="programs.html" class="btn-primary" id="exploreProgramsBtn"><i class="fas fa-layer-group"></i> Explore Our Programs <span class="btn-arrow">→</span></a>
       </div>
       <div class="hero-image">
-        <i class="fas fa-hands-helping"></i>
-        <p style="margin-top: 1rem;">Since 1995 | 26+ states</p>
+        <div class="floating-icon"><i class="fas fa-hands-helping"></i></div>
+        <div class="floating-icon second"><i class="fas fa-graduation-cap"></i></div>
+        <div class="stat-badge">Since 1995 | 26+ states</div>
       </div>
     </div>
   </section>
 
-  <!-- DYNAMIC CATEGORIES SHOWCASE with actual page navigation -->
-  <section id="categoriesDisplaySection" style="padding: 2rem 0 4rem;">
+  <!-- Dynamic Categories Showcase - Animated cards with hover magnetism -->
+  <section id="categoriesDisplaySection" class="categories-section">
     <div class="container">
-      <h2 class="section-title" id="dynamicSectionTitle">Explore Our Work</h2>
-      <p id="dynamicSubtext" style="margin-bottom: 1.5rem; color: #4a6b55;">Click on any category below to learn more about our initiatives.</p>
+      <div class="section-header">
+        <span class="section-subtitle">Our Impact Areas</span>
+        <h2 class="section-title" id="dynamicSectionTitle">Explore Our Work</h2>
+        <p id="dynamicSubtext">Click on any category below to learn more about our initiatives.</p>
+      </div>
       <div id="categoriesContainer" class="category-grid-demo">
-        <!-- Default categories that link to actual pages -->
         <a href="early-years.html" class="demo-cat-card">
-          <i class="fas fa-chalkboard-user"></i>
+          <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
           <h3>Early Years (3-8 yrs)</h3>
           <p>Foundational literacy & numeracy programs reaching 2M+ children.</p>
-          <span style="color:#FF9933; font-size:0.8rem; margin-top:8px; display:inline-block;">Learn more →</span>
+          <span class="card-link-hint">Learn more →</span>
+          <div class="card-shine"></div>
         </a>
         <a href="second-chance.html" class="demo-cat-card">
-          <i class="fas fa-hand-holding-heart"></i>
+          <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
           <h3>Second Chance Program</h3>
           <p>Pratham-Jameel partnership for out-of-school youth.</p>
-          <span style="color:#FF9933; font-size:0.8rem; margin-top:8px; display:inline-block;">Learn more →</span>
+          <span class="card-link-hint">Learn more →</span>
+          <div class="card-shine"></div>
         </a>
         <a href="digital-initiatives.html" class="demo-cat-card">
-          <i class="fas fa-laptop-code"></i>
+          <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
           <h3>Digital Initiatives</h3>
           <p>Tech-driven learning & Hamara Gaon community model.</p>
-          <span style="color:#FF9933; font-size:0.8rem; margin-top:8px; display:inline-block;">Learn more →</span>
+          <span class="card-link-hint">Learn more →</span>
+          <div class="card-shine"></div>
         </a>
         <a href="volunteer.html" class="demo-cat-card">
-          <i class="fas fa-users"></i>
+          <div class="card-icon"><i class="fas fa-users"></i></div>
           <h3>Volunteer With Us</h3>
           <p>Join as mentor, teacher or field partner.</p>
-          <span style="color:#FF9933; font-size:0.8rem; margin-top:8px; display:inline-block;">Learn more →</span>
+          <span class="card-link-hint">Learn more →</span>
+          <div class="card-shine"></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Stats / Impact preview - Responsive -->
-  <section style="background: #f0f9f0; padding: 3rem 0;">
+  <!-- Stats / Impact preview with animated counters -->
+  <section class="stats-section">
     <div class="container">
       <div class="stats-flex">
-        <div><h2 style="color:#FF9933; font-size:clamp(1.8rem, 5vw, 2.5rem);">7M+</h2><p>Children & Youth Reached</p></div>
-        <div><h2 style="color:#FF9933; font-size:clamp(1.8rem, 5vw, 2.5rem);">26</h2><p>States & Union Territories</p></div>
-        <div><h2 style="color:#FF9933; font-size:clamp(1.8rem, 5vw, 2.5rem);">15K+</h2><p>Villages Impacted</p></div>
-        <div><h2 style="color:#FF9933; font-size:clamp(1.8rem, 5vw, 2.5rem);">200+</h2><p>Partners & Donors</p></div>
+        <div class="stat-item"><h2 class="stat-number" data-target="7">0M+</h2><p>Children & Youth Reached</p></div>
+        <div class="stat-item"><h2 class="stat-number" data-target="26">0</h2><p>States & Union Territories</p></div>
+        <div class="stat-item"><h2 class="stat-number" data-target="15">0K+</h2><p>Villages Impacted</p></div>
+        <div class="stat-item"><h2 class="stat-number" data-target="200">0+</h2><p>Partners & Donors</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Education Program Highlight -->
-  <section style="padding: 3rem 0;">
+  <!-- Education Program Highlight - Interactive glass card -->
+  <section class="highlight-section">
     <div class="container">
-      <div style="background: white; border-radius: 24px; padding: clamp(1.5rem, 4vw, 2rem); box-shadow: 0 8px 24px rgba(0,0,0,0.05); border-left: 6px solid #FF9933;">
-        <h3 style="color:#1e4620; font-size: clamp(1.3rem, 4vw, 1.8rem);">📖 Our Flagship: Pratham-Jameel Second Chance Program & Inclusive Education (ENABLE)</h3>
-        <p style="margin: 1rem 0; line-height: 1.6;">Bharat Foundation's journey began in 1995 with a focus on early childhood education. Today we run <strong>Hamara Gaon</strong> (community-led learning), <strong>ENABLE</strong> for children with disabilities, and vocational skilling hubs that have inspired systemic reforms across India.</p>
-        <p><strong>Vocational Training & Digital Initiatives:</strong> AI-based literacy, mobile classrooms, and teacher training institutes.</p>
-        <a href="programs.html" class="btn-primary" style="margin-top: 1rem; background:#138808; display: inline-block;"><i class="fas fa-diagram-project"></i> View All Program Categories</a>
+      <div class="highlight-card glass-effect">
+        <div class="highlight-badge">🇮🇳 Flagship Initiative</div>
+        <h3>📖 Pratham-Jameel Second Chance Program & Inclusive Education (ENABLE)</h3>
+        <p>Bharat Foundation's journey began in 1995 with a focus on early childhood education. Today we run <strong>Hamara Gaon</strong> (community-led learning), <strong>ENABLE</strong> for children with disabilities, and vocational skilling hubs that have inspired systemic reforms across India.</p>
+        <div class="highlight-tags">
+          <span><i class="fas fa-robot"></i> AI-based literacy</span>
+          <span><i class="fas fa-mobile-alt"></i> Mobile classrooms</span>
+          <span><i class="fas fa-chalkboard"></i> Teacher training</span>
+        </div>
+        <a href="programs.html" class="btn-secondary"><i class="fas fa-diagram-project"></i> View All Program Categories</a>
       </div>
     </div>
   </section>
@@ -667,90 +218,140 @@
 
 <footer>
   <div class="container">
-    <p>© 2025 Bharat Foundation — Empowering India with Transparency & Innovation</p>
-    <p style="margin-top: 0.5rem;">📧 connect@bharatfoundation.org | Toll Free: 1800-123-HELP</p>
-    <div style="margin-top: 1rem;">
-      <a href="#" style="color:#FF9933; margin:0 8px; display: inline-block;"><i class="fab fa-twitter"></i></a>
-      <a href="#" style="color:#FF9933; margin:0 8px; display: inline-block;"><i class="fab fa-instagram"></i></a>
-      <a href="#" style="color:#FF9933; margin:0 8px; display: inline-block;"><i class="fab fa-linkedin"></i></a>
+    <div class="footer-grid">
+      <div><p>© 2025 Bharat Foundation — Empowering India with Transparency & Innovation</p></div>
+      <div><p>📧 connect@bharatfoundation.org | Toll Free: 1800-123-HELP</p></div>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-    <p style="margin-top: 1rem; font-size:0.8rem;">Multi-page website — All navigation links point to actual HTML pages</p>
+    <p style="margin-top: 1.5rem; font-size:0.75rem; opacity:0.7;">Multi-page website — All navigation links point to actual HTML pages | Day/Night mode with smooth transitions</p>
   </div>
 </footer>
 
 <script>
-  // Mobile drawer functionality with proper closing
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const drawer = document.getElementById('mobileDrawer');
-  const overlayDiv = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeDrawerBtn');
-  
-  function closeMobileDrawer() {
-    if (overlayDiv) overlayDiv.style.display = 'none';
-    if (drawer) drawer.style.left = '-100%';
-    document.body.style.overflow = '';
-  }
-  
-  function openMobileDrawer() {
-    if (drawer) drawer.style.left = '0';
-    if (overlayDiv) overlayDiv.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  
-  if (mobileBtn) mobileBtn.addEventListener('click', openMobileDrawer);
-  if (closeBtn) closeBtn.addEventListener('click', closeMobileDrawer);
-  if (overlayDiv) overlayDiv.addEventListener('click', closeMobileDrawer);
-  
-  // Auto-close drawer when any link is clicked (for smooth navigation)
-  const allMobileLinks = document.querySelectorAll('.mobile-drawer a');
-  allMobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      setTimeout(closeMobileDrawer, 100);
-    });
-  });
-  
-  // For any dropdown links that still need to navigate - ensure they work
-  // No preventDefault on main nav links - they will navigate normally
-  // But ensure that mega menu and dropdown links also navigate
-  console.log("Navigation ready — All categories now navigate to actual pages. Responsive layout active for all devices.");
-  
-  // Handle any potential hash links
-  if (window.location.hash) {
-    const element = document.querySelector(window.location.hash);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  }
-  
-  // Make all demo category cards navigate (they already have href)
-  // Add touch-friendly improvements for mobile
-  const allCards = document.querySelectorAll('.demo-cat-card');
-  allCards.forEach(card => {
-    card.addEventListener('touchstart', function() {
-      // Just for better touch feedback
-      this.style.transform = 'scale(0.98)';
-    });
-    card.addEventListener('touchend', function() {
-      this.style.transform = '';
-    });
-  });
-  
-  // Responsive adjustment for mega menu on small screens
-  function adjustMegaMenuPosition() {
-    const megaMenus = document.querySelectorAll('.mega-menu');
-    if (window.innerWidth <= 900) {
-      megaMenus.forEach(menu => {
-        menu.style.left = '-20px';
-        menu.style.width = 'calc(100vw - 40px)';
+  // Enhanced mobile drawer + interactive animations, counter, and theme
+  (function() {
+    // Mobile drawer
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlayDiv = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    function closeMobileDrawer() { if(overlayDiv) overlayDiv.style.display = 'none'; if(drawer) drawer.style.left = '-100%'; document.body.style.overflow = ''; }
+    function openMobileDrawer() { if(drawer) drawer.style.left = '0'; if(overlayDiv) overlayDiv.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    if(mobileBtn) mobileBtn.addEventListener('click', openMobileDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeMobileDrawer);
+    if(overlayDiv) overlayDiv.addEventListener('click', closeMobileDrawer);
+    document.querySelectorAll('.mobile-drawer a').forEach(link => link.addEventListener('click', () => setTimeout(closeMobileDrawer, 100)));
+
+    // Dark Mode Toggle with smooth transition
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const setTheme = (isDark) => {
+      if(isDark) {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('bharat-theme', 'dark');
+        if(toggleBtn) toggleBtn.classList.add('dark-active');
+      } else {
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('bharat-theme', 'light');
+        if(toggleBtn) toggleBtn.classList.remove('dark-active');
+      }
+    };
+    const loadTheme = () => {
+      const saved = localStorage.getItem('bharat-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(saved === 'dark') setTheme(true);
+      else if(saved === 'light') setTheme(false);
+      else if(prefersDark) setTheme(true);
+      else setTheme(false);
+    };
+    if(toggleBtn) toggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-theme')));
+    loadTheme();
+
+    // Counter Animation (stats)
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const animateNumbers = () => {
+      statNumbers.forEach(el => {
+        const targetText = el.getAttribute('data-target');
+        if(!targetText) return;
+        let targetVal = parseFloat(targetText);
+        const suffix = el.innerText.includes('M+') ? 'M+' : (el.innerText.includes('K+') ? 'K+' : (el.innerText.includes('+') ? '+' : ''));
+        let current = 0;
+        const increment = targetVal / 45;
+        const updateCounter = () => {
+          current += increment;
+          if(current < targetVal) {
+            let display = Math.floor(current);
+            if(suffix === 'M+') el.innerText = display + 'M+';
+            else if(suffix === 'K+') el.innerText = display + 'K+';
+            else el.innerText = display + (suffix === '+' ? '+' : '');
+            requestAnimationFrame(updateCounter);
+          } else {
+            if(suffix === 'M+') el.innerText = targetVal + 'M+';
+            else if(suffix === 'K+') el.innerText = targetVal + 'K+';
+            else el.innerText = targetVal + (suffix === '+' ? '+' : '');
+          }
+        };
+        updateCounter();
       });
-    } else {
-      megaMenus.forEach(menu => {
-        menu.style.left = '-80px';
-        menu.style.width = '680px';
+    };
+    // Intersection Observer for stats
+    const statsSection = document.querySelector('.stats-section');
+    let counted = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting && !counted) {
+          counted = true;
+          animateNumbers();
+        }
       });
-    }
-  }
-  
-  window.addEventListener('resize', adjustMegaMenuPosition);
-  adjustMegaMenuPosition();
+    }, { threshold: 0.4 });
+    if(statsSection) observer.observe(statsSection);
+
+    // Magnetic hover effect on cards (enhanced)
+    const cards = document.querySelectorAll('.demo-cat-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width/2;
+        const centerY = rect.height/2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
+    });
+
+    // Floating background hero effect + subtle parallax on scroll
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.hero');
+      if(hero) {
+        const scrolled = window.pageYOffset;
+        hero.style.transform = `translateY(${scrolled * 0.03}px)`;
+      }
+    });
+
+    // Additional micro-interactions: navbar underline animation + mobile close on resize
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 900) closeMobileDrawer();
+    });
+    // smooth anchor any btn
+    const exploreBtn = document.getElementById('exploreProgramsBtn');
+    if(exploreBtn && exploreBtn.getAttribute('href') === 'programs.html') { /* keep original */ }
+    
+    // Preload subtle floating icons animation
+    const floatingIcons = document.querySelectorAll('.floating-icon');
+    floatingIcons.forEach((icon, idx) => {
+      icon.style.animationDelay = `${idx * 0.5}s`;
+    });
+  })();
 </script>
 </body>
 </html>
