@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Volunteer with Us | Bharat Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease, color 0.2s ease;
+    }
+
+    /* Theme Variables */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --card-bg: #ffffff;
+      --card-border: #e5e7eb;
+      --border-light: #f0f0f0;
+      --hero-gradient-start: #fff9f0;
+      --hero-gradient-end: #ffe6cc;
+      --navbar-bg: rgba(255, 255, 255, 0.96);
+      --footer-bg: #1f2937;
+      --footer-text: #e5e7eb;
+    }
+
+    body.dark-theme {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --border-light: #334155;
+      --hero-gradient-start: #0f172a;
+      --hero-gradient-end: #1e293b;
+      --navbar-bg: rgba(15, 23, 42, 0.96);
+      --footer-bg: #020617;
+      --footer-text: #cbd5e1;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER / NAVIGATION ===== */
+    header {
+      background: var(--navbar-bg);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF9933, #138808);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .logo p {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: 0.2s;
+    }
+
+    .donate-btn-nav {
+      background: #FF9933;
+      padding: 8px 18px;
+      border-radius: 40px;
+      color: white !important;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .theme-toggle-wrapper button {
+      background: var(--card-border);
+      border: none;
+      border-radius: 60px;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* mobile drawer */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1100;
+    }
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 280px;
+      height: 100%;
+      background: var(--card-bg);
+      z-index: 1200;
+      padding: 2rem 1.5rem;
+      transition: left 0.3s ease;
+      box-shadow: 2px 0 20px rgba(0,0,0,0.2);
+      overflow-y: auto;
+    }
+    .close-drawer {
+      font-size: 2rem;
+      text-align: right;
+      cursor: pointer;
+    }
+    .mobile-nav-item {
+      margin: 1.2rem 0;
+    }
+    .mobile-nav-item a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .mobile-sub {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .mobile-donate-btn {
+      display: inline-block;
+      background: #FF9933;
+      padding: 12px;
+      text-align: center;
+      border-radius: 40px;
+      margin-top: 2rem;
+      width: 100%;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* ===== VOLUNTEER HERO ===== */
+    .volunteer-hero {
+      background: linear-gradient(125deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .hero-badge {
+      background: #FF9933;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+      color: #1e293b;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #FF9933, #138808);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* stats grid */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      min-width: 170px;
+      border: 1px solid var(--card-border);
+      transition: transform 0.2s;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #FF9933;
+    }
+
+    /* opportunity cards */
+    .opportunities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .opp-card {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      border: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .opp-card:hover {
+      transform: translateY(-8px);
+      border-color: #FF9933;
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+    .opp-icon {
+      font-size: 2.5rem;
+      color: #FF9933;
+      margin-bottom: 1rem;
+    }
+    .btn-outline {
+      display: inline-block;
+      margin-top: 1rem;
+      border: 2px solid #FF9933;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #FF9933;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #FF9933;
+      color: white;
+    }
+
+    /* form + impact section */
+    .volunteer-form-container {
+      background: var(--card-bg);
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid var(--card-border);
+      margin: 2rem 0;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--card-border);
+      border-radius: 1rem;
+      font-family: inherit;
+      color: var(--text-primary);
+    }
+    .btn-primary {
+      background: #FF9933;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #1e293b;
+    }
+    .btn-primary:hover {
+      background: #e68a2e;
+      transform: scale(0.98);
+    }
+    .impact-testimonial {
+      background: linear-gradient(115deg, rgba(255,153,51,0.1), rgba(19,136,8,0.05));
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.3rem;
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo"><h1>BHARAT FOUNDATION</h1><p>सेवा परमो धर्मः | Transforming India</p></div>
+      <ul class="nav-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="volunteer.html" style="color:#FF9933;">Volunteer</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="donate-btn-nav"><i class="fas fa-heart"></i> Donate</a></li>
+      </ul>
+      <div class="theme-toggle-wrapper"><button id="darkModeToggle" class="theme-switch"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button></div>
+      <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="close-drawer" id="closeDrawerBtn">&times;</div>
+  <div class="mobile-nav-item"><a href="#">🏠 Home</a></div>
+  <div class="mobile-nav-item"><a href="#">📖 About</a></div>
+  <div class="mobile-nav-item"><a href="#">📚 Programs</a></div>
+  <div class="mobile-nav-item"><a href="volunteer.html">🤝 Volunteer</a></div>
+  <div class="mobile-nav-item"><a href="#">📞 Contact</a></div>
+  <a href="#" class="mobile-donate-btn">❤️ Donate Now</a>
+</div>
+
+<main>
+  <!-- Volunteer Hero Section -->
+  <section class="volunteer-hero">
+    <div class="container">
+      <div class="hero-badge"><i class="fas fa-hands-helping"></i> JOIN THE MOVEMENT</div>
+      <h2 style="font-size: clamp(2rem, 5vw, 3rem);">Be the <span class="gradient-text">Change</span> — Volunteer with Bharat Foundation</h2>
+      <p style="max-width: 700px; margin: 1rem auto; color: var(--text-secondary);">Empower lives, transform communities. Join 2,500+ active volunteers creating inclusive education, skilling, and rural development impact across India.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Impact stats (NGO credibility) -->
+    <div class="stats-grid">
+      <div class="stat-card animate-on-scroll"><div class="stat-number">2,800+</div><p>Active Volunteers</p></div>
+      <div class="stat-card animate-on-scroll"><div class="stat-number">22</div><p>States Covered</p></div>
+      <div class="stat-card animate-on-scroll"><div class="stat-number">1.2L+</div><p>Beneficiaries Reached</p></div>
+      <div class="stat-card animate-on-scroll"><div class="stat-number">150+</div><p>Monthly Events</p></div>
+    </div>
+
+    <!-- Volunteer Opportunities Grid -->
+    <div class="section-header" style="text-align:center; margin: 2rem 0 1rem;">
+      <span style="background:#FF993320; padding:6px 16px; border-radius:40px; font-size:0.8rem;">opportunities</span>
+      <h2 style="margin-top: 0.6rem;">How You Can Contribute</h2>
+    </div>
+
+    <div class="opportunities-grid">
+      <div class="opp-card animate-on-scroll"><div class="opp-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Teaching Assistant</h3><p>Support special educators in inclusive classrooms, assist children with disabilities in learning activities.</p><a href="#vol-form" class="btn-outline">Apply →</a></div>
+      <div class="opp-card animate-on-scroll"><div class="opp-icon"><i class="fas fa-mobile-alt"></i></div><h3>Digital Literacy Mentor</h3><p>Help rural youth learn basic computer skills, assistive tech & online safety. 2hrs/week commitment.</p><a href="#vol-form" class="btn-outline">Join now →</a></div>
+      <div class="opp-card animate-on-scroll"><div class="opp-icon"><i class="fas fa-tree"></i></div><h3>Field Coordinator</h3><p>Organize awareness camps, community mobilisation for ENABLE program & health drives.</p><a href="#vol-form" class="btn-outline">Get involved →</a></div>
+      <div class="opp-card animate-on-scroll"><div class="opp-icon"><i class="fas fa-hand-sparkles"></i></div><h3>Therapy Support Volunteer</h3><p>Assist occupational & speech therapists at our resource centers. Background in rehab sciences a plus.</p><a href="#vol-form" class="btn-outline">Learn more →</a></div>
+    </div>
+
+    <!-- Impact testimonial / short story -->
+    <div class="impact-testimonial animate-on-scroll">
+      <i class="fas fa-quote-left" style="font-size: 2rem; color:#FF9933; opacity:0.6;"></i>
+      <p style="font-size:1.1rem; margin: 1rem 0;">"Volunteering with Bharat Foundation's ENABLE program gave me purpose. Seeing a child with visual impairment read her first braille book changed my perspective forever."</p>
+      <p><strong>— Priya Mehta, Volunteer since 2023</strong> (Teaching Assistant, Rajasthan)</p>
+    </div>
+
+    <!-- Volunteer Registration Form (core action) -->
+    <div id="vol-form" class="volunteer-form-container animate-on-scroll">
+      <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fas fa-user-plus"></i> Become a Volunteer</h3>
+      <p style="margin-bottom: 1.5rem;">Fill the form below — our team will reach out within 48 hours with onboarding details.</p>
+      <form id="volunteerApplication">
+        <div class="form-row">
+          <input type="text" placeholder="Full Name *" id="fullName" required>
+          <input type="email" placeholder="Email Address *" id="email" required>
+        </div>
+        <div class="form-row">
+          <input type="tel" placeholder="Phone Number" id="phone">
+          <select id="interestArea">
+            <option value="">Preferred Role</option>
+            <option>Teaching Assistant</option>
+            <option>Digital Literacy Mentor</option>
+            <option>Field Coordinator</option>
+            <option>Therapy Support</option>
+            <option>Events & Outreach</option>
+          </select>
+        </div>
+        <textarea rows="3" placeholder="Tell us about your skills, motivation or previous volunteering experience... (optional)"></textarea>
+        <div style="margin: 1rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <label><input type="checkbox" id="weekendOnly"> Available on weekends</label>
+          <label><input type="checkbox" id="weekdays"> Weekdays availability</label>
+        </div>
+        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit Application</button>
+        <p id="formFeedback" style="margin-top: 1rem; font-size:0.85rem;"></p>
+      </form>
+    </div>
+
+    <!-- FAQ + additional professional info (NGO policies) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; margin: 2rem 0;">
+      <div class="opp-card" style="padding: 1.5rem;"><i class="fas fa-clock" style="color:#FF9933; font-size: 1.8rem;"></i><h3>Time Commitment</h3><p>Flexible — from 4 hours/month to full weekends. Virtual or on-ground options across 22 states.</p></div>
+      <div class="opp-card" style="padding: 1.5rem;"><i class="fas fa-certificate" style="color:#FF9933; font-size: 1.8rem;"></i><h3>Certification & Benefits</h3><p>Volunteer certificate, LinkedIn recommendations, skill development workshops & community events.</p></div>
+      <div class="opp-card" style="padding: 1.5rem;"><i class="fas fa-shield-alt" style="color:#FF9933; font-size: 1.8rem;"></i><h3>Safeguarding Policy</h3><p>All volunteers undergo orientation & background verification. Child protection mandatory training provided.</p></div>
+    </div>
+
+    <!-- Call to action banner -->
+    <div class="highlight-card" style="background: linear-gradient(105deg, #FF993310, #13880810); border-radius: 2rem; padding: 2rem; text-align: center; margin-bottom: 2rem;">
+      <h3>Ready to make an impact? <i class="fas fa-smile-wink"></i></h3>
+      <p style="margin: 1rem 0;">Join a community of changemakers driving inclusive education, rural development, and women empowerment.</p>
+      <a href="#vol-form" style="background:#FF9933; padding:12px 32px; border-radius: 40px; color:white; font-weight: bold; text-decoration: none; display: inline-block;">Sign Up Today →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <p>© 2025 Bharat Foundation — Empowering India | CIN: U85300DL2020NPL123456</p>
+      <p>📧 volunteer@bharatfoundation.org | ☎️ +91-11-4112 7890</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // Mobile drawer & overlay
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlayDiv = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    function closeDrawer() { if(overlayDiv) overlayDiv.style.display = 'none'; if(drawer) drawer.style.left = '-100%'; document.body.style.overflow = ''; }
+    function openDrawer() { if(drawer) drawer.style.left = '0'; if(overlayDiv) overlayDiv.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    if(mobileBtn) mobileBtn.addEventListener('click', openDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if(overlayDiv) overlayDiv.addEventListener('click', closeDrawer);
+    document.querySelectorAll('.mobile-drawer a').forEach(link => link.addEventListener('click', () => setTimeout(closeDrawer, 100)));
+
+    // Dark mode toggle with persistence
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const setTheme = (isDark) => {
+      if(isDark) { document.body.classList.add('dark-theme'); localStorage.setItem('bharat-theme', 'dark'); }
+      else { document.body.classList.remove('dark-theme'); localStorage.setItem('bharat-theme', 'light'); }
+    };
+    const saved = localStorage.getItem('bharat-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(saved === 'dark') setTheme(true);
+    else if(saved === 'light') setTheme(false);
+    else if(prefersDark) setTheme(true);
+    else setTheme(false);
+    if(toggleBtn) toggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-theme')));
+
+    // Scroll animation observer
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Volunteer form submission (mock / professional feedback)
+    const form = document.getElementById('volunteerApplication');
+    if(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('fullName')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const feedbackSpan = document.getElementById('formFeedback');
+        if(!name || !email) {
+          feedbackSpan.innerHTML = '<span style="color:#e74c3c;">❌ Please fill Name and Email fields.</span>';
+          return;
+        }
+        if(!email.includes('@') || !email.includes('.')) {
+          feedbackSpan.innerHTML = '<span style="color:#e74c3c;">❌ Enter a valid email address.</span>';
+          return;
+        }
+        feedbackSpan.innerHTML = '<span style="color:#2ecc71;">✅ Thank you, ' + name + '! Our volunteer coordinator will connect within 48 hours. 🙌</span>';
+        form.reset();
+        setTimeout(() => { feedbackSpan.innerHTML = ''; }, 5000);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
