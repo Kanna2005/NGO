@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Elementary Years (8-14 yrs) | Bharat Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .program-hero { background: linear-gradient(125deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%); padding: 4rem 0 5rem; position: relative; overflow: hidden; }
+    .program-stats { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0; }
+    .program-stat-card { background: var(--card-bg); border-radius: 1.5rem; padding: 1.5rem; text-align: center; min-width: 180px; border: 1px solid var(--card-border); }
+    .program-stat-number { font-size: 2.5rem; font-weight: 900; color: #FF9933; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .feature-card { background: var(--card-bg); border-radius: 1.5rem; padding: 1.8rem; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); border-color: #FF9933; }
+    .feature-icon { font-size: 2.5rem; color: #FF9933; margin-bottom: 1rem; }
+    .impact-number { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #FF9933, #138808); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .image-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .program-img-card { background: var(--card-bg); border-radius: 1.2rem; overflow: hidden; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .program-img-card:hover { transform: scale(1.02); }
+    .img-placeholder { width: 100%; height: 200px; background: linear-gradient(135deg, #FF9933, #138808); display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; }
+    .img-caption { padding: 1rem; text-align: center; font-weight: 500; }
+    .curriculum-list { list-style: none; padding: 0; }
+    .curriculum-list li { padding: 0.8rem 0; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 1rem; }
+    .curriculum-list li i { color: #FF9933; width: 28px; }
+    .animate-on-scroll { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo"><h1>BHARAT FOUNDATION</h1><p>सेवा परमो धर्मः | Transforming India</p></div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">About Us</a><div class="dropdown-menu"><a href="story.html">Our Story</a><a href="vision.html">Mission & Vision</a></div></li>
+        <li class="nav-item mega"><a href="index.html">Programs</a><div class="mega-menu"><div class="mega-col"><h4>📚 Education</h4><a href="elementary-years.html">Elementary Years</a><a href="inclusive-education.html">Inclusive Education</a></div><div class="mega-col"><h4>🎓 Skilling</h4><a href="vocational-training.html">Vocational Training</a></div></div></li>
+        <li class="nav-item"><a href="index.html">Get Involved</a><div class="dropdown-menu"><a href="volunteer.html">Volunteer</a><a href="donor.html">Donor</a></div></li>
+        <li class="nav-item"><a href="index.html">Resources</a><div class="dropdown-menu"><a href="toolkits.html">Toolkits</a><a href="press-kit.html">Press Kit</a></div></li>
+        <li class="nav-item"><a href="index.html">Contact</a><div class="dropdown-menu"><a href="helpline.html">Helpline</a><a href="feedback.html">Feedback</a></div></li>
+        <li><a href="donate.html" class="donate-btn-nav"><i class="fas fa-heart"></i> Donate</a></li>
+      </ul>
+      <div class="theme-toggle-wrapper"><button id="darkModeToggle" class="theme-switch"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button></div>
+      <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="close-drawer" id="closeDrawerBtn">&times;</div>
+  <div class="mobile-nav-item"><a href="index.html">🏠 Home</a></div>
+  <div class="mobile-nav-item"><a href="about.html">📖 About Us</a><div class="mobile-sub"><a href="story.html">Our Story</a><a href="vision.html">Mission</a></div></div>
+  <div class="mobile-nav-item"><a href="programs.html">📚 Programs</a><div class="mobile-sub"><a href="elementary-years.html">Elementary Years</a><a href="inclusive-education.html">ENABLE</a><a href="vocational-training.html">Vocational</a></div></div>
+  <div class="mobile-nav-item"><a href="get-involved.html">🤝 Get Involved</a></div>
+  <div class="mobile-nav-item"><a href="resources.html">📄 Resources</a></div>
+  <div class="mobile-nav-item"><a href="contact.html">📞 Contact</a></div>
+  <a href="donate.html" class="mobile-donate-btn">❤️ Donate Now</a>
+</div>
+
+<main>
+  <section class="program-hero">
+    <div class="hero-bg-shape"></div>
+    <div class="container">
+      <div class="hero-text" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="hero-badge">📚 Grades 3-8 | Ages 8-14</div>
+        <h2 style="font-size: clamp(2rem, 5vw, 3rem);">Elementary Years <span class="gradient-text">Program</span></h2>
+        <div class="tagline" style="border-left: none; border-top: 3px solid #FF9933; padding-top: 1rem; display: inline-block;">Building strong foundations in literacy, numeracy, and critical thinking for 3.5 million children across 18 states.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="program-stats">
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">3.5M+</div><p>Children Enrolled</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">18</div><p>States Covered</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">92%</div><p>Learning Improvement</p></div>
+      <div class="program-stat-card animate-on-scroll"><div class="program-stat-number">25K+</div><p>Trained Teachers</p></div>
+    </div>
+
+    <div class="image-showcase">
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-chalkboard-user"></i></div><div class="img-caption">Interactive classroom learning</div></div>
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-book-open"></i></div><div class="img-caption">Reading circles & libraries</div></div>
+      <div class="program-img-card"><div class="img-placeholder"><i class="fas fa-calculator"></i></div><div class="img-caption">Math skills development</div></div>
+    </div>
+
+    <div class="section-header"><span class="section-subtitle">Program Overview</span><h2 class="section-title">What We Teach</h2></div>
+    <div class="feature-grid">
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-book"></i></div><h3>Foundational Literacy</h3><p>Advanced reading comprehension, vocabulary building, and expressive writing in both English and regional languages.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Numeracy & Problem Solving</h3><p>Critical math skills including fractions, geometry, data interpretation, and real-world problem solving.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-flask"></i></div><h3>Science Exploration</h3><p>Hand-on experiments, environmental awareness, and inquiry-based learning through our mobile science labs.</p></div>
+      <div class="feature-card animate-on-scroll"><div class="feature-icon"><i class="fas fa-laptop"></i></div><h3>Digital Literacy</h3><p>Basic computer skills, internet safety, and introduction to coding through our digital learning platforms.</p></div>
+    </div>
+
+    <div class="section-header"><span class="section-subtitle">Curriculum Approach</span><h2 class="section-title">Our Teaching Methodology</h2></div>
+    <div class="mission-vision-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem;">
+      <div class="mv-card animate-on-scroll"><div class="mv-icon"><i class="fas fa-child"></i></div><h3>Child-Centric Learning</h3><p>Activity-based, experiential learning that adapts to each child's pace and learning style. Regular assessments ensure no child falls behind.</p></div>
+      <div class="mv-card animate-on-scroll"><div class="mv-icon"><i class="fas fa-users"></i></div><h3>Peer Learning Groups</h3><p>Collaborative projects and group activities that build social skills, teamwork, and leadership from an early age.</p></div>
+    </div>
+
+    <div class="highlight-card glass-effect animate-on-scroll" style="margin: 2rem 0;">
+      <h3 style="color: #FF9933;">🎯 Impact Highlight</h3>
+      <p>Students in our Elementary Years program show <strong>92% improvement</strong> in reading fluency and <strong>88% improvement</strong> in math problem-solving within 12 months of enrollment. Over 250,000 students have successfully transitioned to secondary education with our support.</p>
+    </div>
+
+    <div class="section-header"><span class="section-subtitle">Learning Resources</span><h2 class="section-title">Tools & Materials</h2></div>
+    <ul class="curriculum-list" style="margin-bottom: 3rem;">
+      <li><i class="fas fa-check-circle"></i> Custom-developed workbooks in 8 regional languages</li>
+      <li><i class="fas fa-check-circle"></i> Digital learning tablets pre-loaded with interactive content</li>
+      <li><i class="fas fa-check-circle"></i> Teacher training modules and weekly mentorship</li>
+      <li><i class="fas fa-check-circle"></i> Parent engagement kits for at-home learning support</li>
+      <li><i class="fas fa-check-circle"></i> Assessment tools tracking individual learning trajectories</li>
+    </ul>
+
+    <div class="highlight-card glass-effect" style="text-align: center; margin-bottom: 3rem;">
+      <h3>Be Part of a Child's Learning Journey</h3>
+      <p style="margin: 1rem 0;">Sponsor a child's elementary education or volunteer as a teaching mentor.</p>
+      <a href="donate.html" class="btn-primary"><i class="fas fa-heart"></i> Support a Child Today</a>
+    </div>
+  </div>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><p>© 2025 Bharat Foundation — Empowering India</p></div><div><p>📧 connect@bharatfoundation.org</p></div><div class="social-icons"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div></div></footer>
+
+<script>
+  (function() {
+    const mobileBtn = document.getElementById('mobileMenuBtn'), drawer = document.getElementById('mobileDrawer'), overlayDiv = document.getElementById('overlay'), closeBtn = document.getElementById('closeDrawerBtn');
+    function closeDrawer() { if(overlayDiv) overlayDiv.style.display = 'none'; if(drawer) drawer.style.left = '-100%'; document.body.style.overflow = ''; }
+    function openDrawer() { if(drawer) drawer.style.left = '0'; if(overlayDiv) overlayDiv.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    if(mobileBtn) mobileBtn.addEventListener('click', openDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if(overlayDiv) overlayDiv.addEventListener('click', closeDrawer);
+    document.querySelectorAll('.mobile-drawer a').forEach(link => link.addEventListener('click', () => setTimeout(closeDrawer, 100)));
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const setTheme = (isDark) => { if(isDark) { document.body.classList.add('dark-theme'); localStorage.setItem('bharat-theme', 'dark'); } else { document.body.classList.remove('dark-theme'); localStorage.setItem('bharat-theme', 'light'); } };
+    const saved = localStorage.getItem('bharat-theme'), prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(saved === 'dark') setTheme(true); else if(saved === 'light') setTheme(false); else if(prefersDark) setTheme(true); else setTheme(false);
+    if(toggleBtn) toggleBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-theme')));
+    const animated = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity = '1'; observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    animated.forEach(el => observer.observe(el));
+  })();
+</script>
+</body>
+</html>
